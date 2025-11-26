@@ -96,36 +96,89 @@ function Home() {
   ];
 
   return (
-    <div style={{ padding: 40, maxWidth: 900, margin: "auto" }}>
-      <Navbar />
-      <QvbHeader
-        lessonName={lessonName}
-        setLessonName={setLessonName}
-        date={date}
-        setDate={setDate}
-        fromLang={fromLang}
-        setFromLang={setFromLang}
-        toLang={toLang}
-        setToLang={setToLang}
-        languages={languages}
-      />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        gap: 20,
+        padding: "20px 10px",
+      }}
+    >
+      {/* LEFT SIDEBAR (Desktop only) */}
+      <div
+        style={{
+          width: 160,
+          display: window.innerWidth > 1024 ? "block" : "none",
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            height: 600,
+            background: "#f1f1f1",
+            borderRadius: 6,
+          }}
+        >
+          Advertisement
+        </div>
+      </div>
 
-      <QvbTable
-        rows={rows}
-        columns={columns}
-        updateCell={updateCell}
-        deleteRow={deleteRow}
-         handleWordChange={handleWordChange}
-      />
+      {/* MAIN CONTENT */}
+      <div
+        style={{
+          maxWidth: 900,
+          width: "100%",
+        }}
+      >
+        <Navbar />
+        <QvbHeader
+          lessonName={lessonName}
+          setLessonName={setLessonName}
+          date={date}
+          setDate={setDate}
+          fromLang={fromLang}
+          setFromLang={setFromLang}
+          toLang={toLang}
+          setToLang={setToLang}
+          languages={languages}
+        />
 
-      <QvbBottomButtons
-        rows={rows}
-        maxRows={maxRows}
-        addRow={addRow}
-        exportDocx={() =>
-          exportDocx(lessonName, date.format("YYYY-MM-DD"), rows)
-        }
-      />
+        <QvbTable
+          rows={rows}
+          columns={columns}
+          updateCell={updateCell}
+          deleteRow={deleteRow}
+          handleWordChange={handleWordChange}
+        />
+
+        <QvbBottomButtons
+          rows={rows}
+          maxRows={maxRows}
+          addRow={addRow}
+          exportDocx={() =>
+            exportDocx(lessonName, date.format("YYYY-MM-DD"), rows)
+          }
+        />
+      </div>
+
+      {/* RIGHT SIDEBAR (Desktop only) */}
+      <div
+        style={{
+          width: 160,
+          display: window.innerWidth > 1024 ? "block" : "none",
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            height: 600,
+            background: "#f1f1f1",
+            borderRadius: 6,
+          }}
+        >
+          Advertisement
+        </div>
+      </div>
     </div>
   );
 }
