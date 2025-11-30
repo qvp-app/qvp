@@ -62,6 +62,7 @@ export default function Navbar() {
         className={styles.Info}
         style={{ fontSize: 24, cursor: "pointer", marginLeft: 10 }}
         onClick={() => setOpenModal(true)}
+        
       />
 
       <AboutModal open={openModal} onClose={() => setOpenModal(false)} />
