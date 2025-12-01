@@ -58,6 +58,7 @@ export default function Blog() {
                 alignItems: "center",
                 color: "#777",
               }}
+              
             >
               Advertisement
             </div>
@@ -69,7 +70,7 @@ export default function Blog() {
       <div className={styles["sidebar-right"]}>
         <div className={styles["ad-box"]}>Advertisement</div>
       </div>
-      
+
     </div>
   );
 }
