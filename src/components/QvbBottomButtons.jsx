@@ -1,5 +1,7 @@
 import { Button, Space } from "antd";
 import { PlusOutlined, DownloadOutlined } from "@ant-design/icons";
+import SimpleAd from "./SimpleAd";
+
 
 const QvbBottomButtons = ({ rows, maxRows, addRow, exportDocx }) => {
   return (
@@ -22,7 +24,7 @@ const QvbBottomButtons = ({ rows, maxRows, addRow, exportDocx }) => {
           id="ad-qvb-bottom"
           style={{
             width: "100%",
-            height: 120,
+            height: "150px",
             background: "#f1f1f1",
             borderRadius: 6,
             display: "flex",
@@ -31,9 +33,9 @@ const QvbBottomButtons = ({ rows, maxRows, addRow, exportDocx }) => {
             color: "#888",
             fontSize: 14,
           }}
-        >
-          Advertisement
+        > 
         </div>
+        <SimpleAd />
       </div>
     </div>
   );
