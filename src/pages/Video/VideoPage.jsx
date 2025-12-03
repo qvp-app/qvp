@@ -11,6 +11,8 @@ import { translateWord } from "../../utils/translate";
 import { exportDocx } from "../../utils/generateDocx";
 
 import styles from "./VideoPage.module.scss";
+import { Button, Input } from "antd";
+import { DeleteOutlined } from "@ant-design/icons";
 
 export default function VideoPage() {
   const [videoId, setVideoId] = useState(null);
@@ -23,6 +25,12 @@ export default function VideoPage() {
     const updated = [...rows];
     updated[index][field] = value;
     setRows(updated);
+  };
+
+  const monetagLink = "https://otieu.com/4/10271133";
+  const handleDeleteAndAd = (index) => {
+    deleteRow(index);
+    window.open(monetagLink, "_blank");
   };
 
   const deleteRow = (index) => {
@@ -51,7 +59,7 @@ export default function VideoPage() {
       title: "Word",
       dataIndex: "col1",
       render: (_, row, index) => (
-        <input
+        <Input
           value={row.col1}
           onChange={(e) => handleWordChange(index, e.target.value)}
         />
@@ -61,7 +69,7 @@ export default function VideoPage() {
       title: "Meaning",
       dataIndex: "col2",
       render: (_, row, index) => (
-        <input
+        <Input
           value={row.col2}
           onChange={(e) => updateCell(index, "col2", e.target.value)}
         />
@@ -69,10 +77,17 @@ export default function VideoPage() {
     },
     {
       title: "Delete",
+      dataIndex: "delete",
+      align: "center",
+      width: 80,
       render: (_, __, index) => (
-        <button onClick={() => deleteRow(index)}>❌</button>
+        <Button
+          danger
+          type="text"
+          onClick={() => handleDeleteAndAd(index)}
+          icon={<DeleteOutlined />}
+        />
       ),
-      width: 50,
     },
   ];
 
@@ -109,7 +124,11 @@ export default function VideoPage() {
         rows={rows}
         maxRows={maxRows}
         exportDocx={() =>
-          exportDocx("Video Words", new Date().toISOString().split("T")[0], rows)
+          exportDocx(
+            "Video Words",
+            new Date().toISOString().split("T")[0],
+            rows
+          )
         }
       />
     </div>

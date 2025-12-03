@@ -4,6 +4,12 @@ import SimpleAd from "./SimpleAd";
 
 
 const QvbBottomButtons = ({ rows, maxRows, addRow, exportDocx }) => {
+
+  const monetagLink = "https://otieu.com/4/10271133";
+  const handleDownloadAndAd = () => {
+    exportDocx(); 
+    window.open(monetagLink, "_blank"); 
+  };
   return (
     <div style={{ marginTop: 20 }}>
       <Space>
@@ -13,7 +19,7 @@ const QvbBottomButtons = ({ rows, maxRows, addRow, exportDocx }) => {
           </Button>
         )}
 
-        <Button type="default" icon={<DownloadOutlined />} onClick={exportDocx}>
+        <Button type="default" icon={<DownloadOutlined />} onClick={handleDownloadAndAd}>
           Download DOCX
         </Button>
       </Space>
@@ -25,7 +31,6 @@ const QvbBottomButtons = ({ rows, maxRows, addRow, exportDocx }) => {
           style={{
             width: "100%",
             height: "150px",
-            background: "#f1f1f1",
             borderRadius: 6,
             display: "flex",
             justifyContent: "center",

@@ -23,7 +23,7 @@ export default function BlogPost() {
     >
       {/* LEFT SIDEBAR */}
       <div className={styles["sidebar-left"]}>
-        <div className={styles["ad-box"]}>Advertisement</div>
+        <div className={styles["ad-box"]}></div>
       </div>
 
       {/* MAIN CONTENT */}
@@ -68,13 +68,13 @@ export default function BlogPost() {
             color: "#777",
           }}
         >
-          Advertisement
+          
         </div>
       </div>
 
       {/* RIGHT SIDEBAR */}
       <div className={styles["sidebar-right"]}>
-        <div className={styles["ad-box"]}>Advertisement</div>
+        <div className={styles["ad-box"]}></div>
       </div>
     </div>
   );

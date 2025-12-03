@@ -38,6 +38,11 @@ function Home() {
     updated[index][field] = value;
     setRows(updated);
   };
+  const monetagLink = "https://otieu.com/4/10271133";
+  const handleDeleteAndAd = (index) => {
+    deleteRow(index);
+    window.open(monetagLink, "_blank");
+  };
 
   const deleteRow = (index) => {
     const updated = rows.filter((_, i) => i !== index);
@@ -90,7 +95,7 @@ function Home() {
         <Button
           danger
           type="text"
-          onClick={() => deleteRow(index)}
+          onClick={() => handleDeleteAndAd(index)}
           icon={<DeleteOutlined />}
         />
       ),
@@ -101,7 +106,7 @@ function Home() {
     <div className={styles["page-wrapper"]}>
       {/* LEFT SIDEBAR (Desktop only) */}
       <div className={styles["sidebar-left"]}>
-        <div className={styles["ad-box"]}>Advertisement</div>
+        <div className={styles["ad-box"]}></div>
       </div>
 
       {/* MAIN CONTENT */}
@@ -146,7 +151,7 @@ function Home() {
 
       {/* RIGHT SIDEBAR (Desktop only) */}
       <div className={styles["sidebar-right"]}>
-        <div className={styles["ad-box"]}>Advertisement</div>
+        <div className={styles["ad-box"]}></div>
       </div>
     </div>
   );

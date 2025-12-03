@@ -5,6 +5,11 @@ import { useWindowSize } from "../hooks/useWindowSize";
 
 export default function QvbTable({ rows, columns, updateCell, deleteRow, handleWordChange }) {
   const width = useWindowSize();
+  const monetagLink = "https://otieu.com/4/10271133";
+  const handleDeleteAndAd = (index) => {
+    deleteRow(index); 
+    window.open(monetagLink, "_blank"); 
+  };
 
   if (width < 768) {
     return (
@@ -31,7 +36,7 @@ export default function QvbTable({ rows, columns, updateCell, deleteRow, handleW
               danger
               type="primary"
               icon={<DeleteOutlined />}
-              onClick={() => deleteRow(index)}
+              onClick={() => handleDeleteAndAd(index)}
               
             >
               Delete

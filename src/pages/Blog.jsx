@@ -22,7 +22,7 @@ export default function Blog() {
     >
       {/* LEFT SIDEBAR */}
       <div className={styles["sidebar-left"]}>
-        <div className={styles["ad-box"]}>Advertisement</div>
+        <div className={styles["ad-box"]}></div>
       </div>
 
       {/* MAIN BLOG CONTENT */}
@@ -50,7 +50,7 @@ export default function Blog() {
               style={{
                 width: "100%",
                 height: 120,
-                background: "#f1f1f1",
+                // background: "#f1f1f1",
                 borderRadius: 6,
                 marginTop: 10,
                 display: "flex",
@@ -60,7 +60,7 @@ export default function Blog() {
               }}
               
             >
-              Advertisement
+              
             </div>
           </Card>
         ))}
@@ -68,7 +68,7 @@ export default function Blog() {
 
       {/* RIGHT SIDEBAR */}
       <div className={styles["sidebar-right"]}>
-        <div className={styles["ad-box"]}>Advertisement</div>
+        <div className={styles["ad-box"]}></div>
       </div>
 
     </div>
